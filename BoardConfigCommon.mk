@@ -29,7 +29,14 @@ BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
 TARGET_KERNEL_CONFIG := msm8953-perf_defconfig xiaomi/xiaomi.config
-TARGET_KERNEL_CLANG_VERSION := r530567
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := external
+
+# use external clang
+# you can even use a clang 22 toolchain here
+TARGET_KERNEL_CLANG_PATH := /tmp/optane/clang
+KERNEL_CC := CC=clang
+override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
 
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
