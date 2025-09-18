@@ -315,7 +315,6 @@ PRODUCT_PACKAGES += \
     libcld80211 \
     libwifi-hal-ctrl \
     hostapd \
-    wcnss_service \
     wificond \
     WifiOverlay \
     wpa_supplicant \
