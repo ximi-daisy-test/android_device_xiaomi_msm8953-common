@@ -281,6 +281,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     TimeKeep
 
+# UFFD GC
+OVERRIDE_ENABLE_UFFD_GC := false
+
 # USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.basic
