@@ -54,6 +54,10 @@ blob_fixups: blob_fixups_user_type = {
         .fix_xml(),
     ('vendor/lib64/mediadrm/libwvdrmengine.so', 'vendor/lib64/libwvhidl.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
+    'proprietary/system_ext/lib64/lib-imscamera.so': blob_fixup()
+        .replace_needed('libui.so', 'libui-v34.so'),
+    'proprietary/system_ext/lib64/lib-imsvideocodec.so': blob_fixup()
+        .replace_needed('libui.so', 'libui-v34.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
