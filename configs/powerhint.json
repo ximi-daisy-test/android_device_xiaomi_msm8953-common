@@ -85,7 +85,7 @@
     },
     {
       "Name": "DoubleTapToWake",
-      "Path": "/proc/touchpanel/enable_dt2w",
+      "Path": "/proc/touchpanel/wakeup_gesture",
       "Values": ["1", "0"],
       "DefaultIndex": 1,
       "ResetOnInit": true
