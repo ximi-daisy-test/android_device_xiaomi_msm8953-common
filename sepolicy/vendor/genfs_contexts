@@ -1,6 +1,9 @@
 # Boot reason
 genfscon proc  /sys/kernel/boot_reason   u:object_r:proc_boot_reason:s0
 
+# Graphics
+genfscon sysfs /devices/virtual/graphics/fb0/idle_state u:object_r:sysfs_graphics:s0
+
 # Leds
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm8953@0:qcom,leds@a100 u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0045/leds/ u:object_r:sysfs_leds:s0
@@ -11,6 +14,12 @@ genfscon sysfs /devices/soc/msm-bcl-21/power_supply                  u:object_r:
 genfscon sysfs /devices/soc/qpnp-typec-9/power_supply                  u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:vadc@3100 u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8940@2:vadc@3100 u:object_r:sysfs_battery_supply:s0
+
+# PowerHAL
+genfscon sysfs /devices/platform/soc/soc:qcom,cpubw u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,gpubw u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,llccbw u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mincpubw u:object_r:sysfs_msm_subsys:s0
 
 # Extcon
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,qpnp-smbcharger/extcon u:object_r:sysfs_extcon:s0
@@ -34,3 +43,6 @@ genfscon sysfs /touchpanel	u:object_r:proc_touchpanel:s0
 
 # Vibrator
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8940@3:qcom,haptics@c000/leds/vibrator	u:object_r:sysfs_leds:s0
+
+# Wi-Fi
+genfscon debugfs /wlan0 u:object_r:debugfs_wlan:s0
