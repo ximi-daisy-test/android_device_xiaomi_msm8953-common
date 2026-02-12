@@ -129,6 +129,9 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
+# Incremental FS
+ro.incremental.enable=true
+
 # Media
 av.debug.disable.pers.cache=1
 media.aac_51_output_enabled=true
